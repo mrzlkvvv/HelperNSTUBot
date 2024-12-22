@@ -1,3 +1,4 @@
+import sys
 import asyncio
 import logging
 
@@ -26,4 +27,4 @@ if __name__ == '__main__':
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        exit(0)
+        sys.exit(0)
