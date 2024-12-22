@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "helpernstubot"
+version = "0.1.0"
+description = ""
+authors = ["Kirill Merzlyakov <kiri11.mer31yak0v@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+aiogram = "^3.16.0"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
