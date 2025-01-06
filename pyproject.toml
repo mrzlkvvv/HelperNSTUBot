@@ -3,6 +3,7 @@ name = "helpernstubot"
 version = "0.1.0"
 description = ""
 authors = ["Kirill Merzlyakov <kiri11.mer31yak0v@gmail.com>"]
+package-mode = false
 license = "MIT"
 readme = "README.md"
 
