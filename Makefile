@@ -1,7 +1,11 @@
 .SILENT:
 
 run:
-	poetry run python src/main.py
+	uv run ./src/main.py
 
 lint:
-	pylint -j$(shell nproc) $(shell git ls-files '*.py')
+	uvx ruff check
+
+update:
+	uv sync -U
+	uv pip compile pyproject.toml > requirements.txt
