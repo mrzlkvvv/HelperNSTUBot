@@ -1,7 +1,10 @@
 .SILENT:
 
 run:
-	uv run ./src/main.py
+	docker compose down
+	clear
+	docker compose build --no-cache
+	docker compose up
 
 lint:
 	uvx ruff check

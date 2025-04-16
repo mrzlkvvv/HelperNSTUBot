@@ -1,0 +1,23 @@
+services:
+
+  bot:
+    build: .
+    env_file: .env
+    environment:
+      - MONGO_DSN=mongodb://db:27017/
+    depends_on:
+      - db
+    volumes:
+      - ./data/:/app/data
+    restart: always
+
+  db:
+    image: mongo:8
+    command:
+      - mongod
+      - --logpath=/dev/null
+    ports:
+      - 27017:27017
+    volumes:
+      - /var/lib/mongodb/:/data/db/
+    restart: always
