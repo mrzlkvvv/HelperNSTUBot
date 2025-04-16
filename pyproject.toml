@@ -1,10 +1,11 @@
 [project]
 name = "helpernstubot"
-version = "0.1.0"
+version = "1.0.0"
 description = "Мультиязычный Telegram-бот для отображения меню столовых НГТУ"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "aiogram>=3.18.0",
+    "motor>=3.7.0",
     "python-dotenv>=1.0.1",
 ]

@@ -3,23 +3,26 @@ import asyncio
 import logging
 
 from aiogram import Bot, Dispatcher
-from aiogram.filters import CommandStart
-from aiogram.types import Message
 
 import config
+from database.database import Database
+from handlers.user import router as user_router
+from handlers.admin import router as admin_router
+from misc.keyboard import init_buttons_mapping
 
 
-bot = Bot(token=config.TOKEN)
+bot = Bot(token=config.BOT_TOKEN)
+
 dp = Dispatcher()
+dp.include_router(user_router)
+dp.include_router(admin_router)
 
-
-@dp.message(CommandStart())
-async def start(message: Message):
-    await message.answer('Hello!')
+db = Database()
 
 
 async def main():
     logging.basicConfig(level=logging.INFO)
+    await init_buttons_mapping()
     await dp.start_polling(bot)
 
 
