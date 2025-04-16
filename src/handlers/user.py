@@ -166,7 +166,7 @@ async def handle_product_btns(callback: CallbackQuery):
                 language_code=user.language_code
             )
         
-        if product is not None:
+        if (product is not None) and (str(product.id) != tokens[3]):
             await callback.message.edit_media(  # pyright: ignore
                 InputMediaPhoto(
                     media=FSInputFile(f'./data/imgs/{product.photo_path}'),
