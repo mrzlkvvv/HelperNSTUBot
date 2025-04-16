@@ -25,11 +25,19 @@ class PyObjectId(ObjectId):
 class LanguageNames(BaseModel):
     ru: str = 'Русский 🇷🇺'
     en: str = 'English 🇺🇸'
+    kk: str = 'Қазақша 🇰🇿'
+    zh: str = '中文 🇨🇳'
+    fr: str = 'Français 🇫🇷'
+    es: str = 'Español 🇪🇸'
 
 
 class Translations(BaseModel):
     ru: str
     en: str
+    kk: str
+    zh: str
+    fr: str
+    es: str
 
 
 assert set(LanguageNames.model_fields.keys()) == set(Translations.model_fields.keys()), \
